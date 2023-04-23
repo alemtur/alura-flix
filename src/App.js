@@ -1,6 +1,9 @@
 /* import logo from './logo.svg';
 import './App.css'; */
-import { Boton } from "./Components/Boton";
+import { Banner } from "./Components/Banner/Banner";
+import { Header } from "./Components/Header/Header";
+import { Footer } from "./Components/Footer/Footer";
+
 
 function App() {
   return (
@@ -20,8 +23,12 @@ function App() {
         </a>
       </header> */}
 
-      <Boton>Normal</Boton>
-      <Boton $primary>Primary</Boton>
+      <Header />
+      <Banner />
+      <Footer />
+
+      
+      
 
 
     </div>

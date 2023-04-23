@@ -1,0 +1,39 @@
+.banner-container {
+  display: flex;
+  width: 1440px;
+  height: 832px;
+  background-image: url("../../imgs/fondo_banner.png");
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.banner-titulos {
+  display: flex;
+  width: 1400px;
+  height: 400px;
+  justify-content: space-around;
+}
+
+.banner-titulo {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.banner-titulo div {
+  color: white;
+  background-color: cyan;
+  width: 170px;
+  height: 80px;
+  text-align: center;
+}
+
+.banner-titulo h2 {
+  color: white;
+}
+
+.banner-titulo p {
+  color: gray;
+  font-size: 1.2rem;
+  text-align: justify;
+}
