@@ -1,0 +1,27 @@
+{
+    "categoria_videos": [
+        {
+            "nombre": "Categoria 1",
+            "cat_id": 1
+        },
+        {
+            "nombre": "Categoria 2",
+            "cat_id": 2
+        }
+    ],
+    "videos": [
+        {
+            "url_video": "www.video1.com",
+            "url_imagen": "www.imagen1.com",
+            "id": 1,
+            "cat_id":1
+        },
+        {
+            "url_video": "www.video2.com",
+            "url_imagen": "www.imagen2.com",
+            "id": 2,
+            "cat_id":2
+        }
+    ]    
+
+}

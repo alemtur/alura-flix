@@ -5,6 +5,6 @@ import "./Header.css"
 export const Header = () => {
     return <div className="header">
         <img src={logo} alt="Logo AluraFlix" />
-        <Boton>Nuevo video</Boton>
+        {/* <Boton>Nuevo video</Boton> */}
     </div>
 }

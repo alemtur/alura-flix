@@ -1,9 +1,11 @@
 /* import logo from './logo.svg';
 import './App.css'; */
+import React from "react";
 import { Banner } from "./Components/Banner/Banner";
 import { Header } from "./Components/Header/Header";
 import { Footer } from "./Components/Footer/Footer";
-
+import { DefaultPage } from "./Components/DefaultPage/DefaultPage";
+import  { SimpleSlider } from "./Components/Carousel/Slider/Slick";
 
 function App() {
   return (
@@ -23,11 +25,13 @@ function App() {
         </a>
       </header> */}
 
-      <Header />
+      {/* <Header />
       <Banner />
-      <Footer />
+      <Footer /> */}
 
-      
+      <DefaultPage>
+        
+      </DefaultPage>      
       
 
 
