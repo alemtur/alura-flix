@@ -6,6 +6,7 @@ import { Header } from "./Components/Header/Header";
 import { Footer } from "./Components/Footer/Footer";
 import { DefaultPage } from "./Components/DefaultPage/DefaultPage";
 import  { SimpleSlider } from "./Components/Carousel/Slider/Slick";
+import FormNuevoVideo from "./Components/FormNuevoVideo/FormNuevoVideo";
 
 function App() {
   return (
@@ -29,9 +30,9 @@ function App() {
       <Banner />
       <Footer /> */}
 
-      <DefaultPage>
-        
-      </DefaultPage>      
+      <DefaultPage></DefaultPage>
+
+            
       
 
 

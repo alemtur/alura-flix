@@ -11,16 +11,22 @@
     ],
     "videos": [
         {
+            "titulo:": "Titulo 1",
             "url_video": "www.video1.com",
             "url_imagen": "www.imagen1.com",
-            "id": 1,
-            "cat_id":1
+            "categoria": "Categoria 1",
+            "descripcion": "Descripcion 1",
+            "id": 1
+            
         },
         {
+            "titulo:": "Titulo 2",
             "url_video": "www.video2.com",
             "url_imagen": "www.imagen2.com",
-            "id": 2,
-            "cat_id":2
+            "categoria": "Categoria 2",
+            "descripcion": "Descripcion 2",
+            "id": 2
+           
         }
     ]    
 
