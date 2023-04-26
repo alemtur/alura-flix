@@ -5,10 +5,11 @@ import { useState } from "react"
 import { Boton } from "../Boton/Boton"
 import { CampoTexto } from "../CampoTexto/CampoTexto"
 import ListaOpciones from "../ListaOpciones/ListaOpciones"
+import { Link } from "react-router-dom"
 
 const FormNuevoVideo = (props) => {
 
-    const [titulo,actualizarTitulo] = useState("")
+    const [titulo,setTitulo] = useState("")
     const [urlVideo,setUrlVideo] = useState("")
     const [urlImagen,setUrlImagen] = useState("")
     const [categoria, setCategoria] = useState("")
@@ -42,6 +43,13 @@ const FormNuevoVideo = (props) => {
         //crearEquipo({titulo, colorPrimario: color})
     }
 
+    const limpiarCampos = () => {
+        setTitulo('')
+        setUrlVideo('')
+        setUrlImagen('')
+        setDescripcion('')
+    }
+
 
     return <section className="formulario">
         <form onSubmit={ manejarNuevoVideo }>
@@ -52,7 +60,7 @@ const FormNuevoVideo = (props) => {
                 placeholder="Titulo"
                 required
                 valor={ titulo }
-                actualizarValor={ actualizarTitulo }
+                actualizarValor={ setTitulo }
             />
 
             <CampoTexto 
@@ -86,8 +94,8 @@ const FormNuevoVideo = (props) => {
             />
 
             <Boton>Guardar</Boton>
-            <Boton>Limpiar</Boton>
-            <Boton>Nueva Categoría</Boton>
+            <Boton funcion={limpiarCampos}>Limpiar</Boton>
+            <Link to="/nueva-categoria"><Boton>Nueva Categoría</Boton></Link>
         </form>
         
     </section>

@@ -7,36 +7,24 @@ import { Footer } from "./Components/Footer/Footer";
 import { DefaultPage } from "./Components/DefaultPage/DefaultPage";
 import  { SimpleSlider } from "./Components/Carousel/Slider/Slick";
 import FormNuevoVideo from "./Components/FormNuevoVideo/FormNuevoVideo";
+import { Carrusel } from "./Components/Carousel/Carrusel/Carrusel";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
 
-      {/* <Header />
-      <Banner />
-      <Footer /> */}
+    <Router>
 
-      <DefaultPage></DefaultPage>
+      {/* <div className="App">
+        <DefaultPage contenido =  <FormNuevoVideo />  ></DefaultPage>
+      </div> */}
+      <Routes>
+         <Route path='/' element={ <DefaultPage contenido =  <Carrusel />  /> } />
+         <Route path='/nuevo-video' element={ <DefaultPage contenido =  <FormNuevoVideo />  /> } />
+         <Route path='/nueva-categoria' element={ <DefaultPage contenido =  <FormNuevoVideo />  /> } />
+      </Routes>
 
-            
-      
-
-
-    </div>
+    </Router>
   );
 }
 
