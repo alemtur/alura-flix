@@ -2,21 +2,49 @@ import React from "react";
 import styled from "styled-components";
 import { SimpleSlider } from "../Slider/Slick";
 
-const DivCarrusel = styled.div`
-    margin: 0 auto;
-    padding: 40px;
-    width: 90%;
-    color: #333;
-    background: #419be0;
 
+
+const DivCarrusel = styled.div`
+    /* margin: 0 auto; */
+    /* display: flex;
+    justify-content: space-between; */
+    margin: 20px auto;
+    /* padding: 40px; */
+    //padding: 0;
+    width: 95%;
+    background: black;
+    
 `
 
-export const Carrusel = (datosVideos) => {
-    //const { url_video, url_imagen } = datosVideos;
+const Titulo = styled.div`
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: left;
+    display: inline-block;
+    padding: 5px 5px;
+        
+`
 
+const Descripcion = styled.div`
+    color: grey;
+    font-size: 1em;
+    margin-left: 0.5rem;
+    text-align: left;
+    display: inline-block;       
+`
+
+
+export const Carrusel = (props) => {
+
+    
     return(
         <DivCarrusel>
-            <SimpleSlider></SimpleSlider>
+            <Titulo style={{background: `${props.color}`}}>{props.nombre}</Titulo>
+            <Descripcion>{props.descripcion}</Descripcion>
+            <SimpleSlider categoriaVideo={props.categoriaVideo}>
+                
+            </SimpleSlider>
         </DivCarrusel>
     );
 }

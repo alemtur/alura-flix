@@ -1,12 +1,15 @@
 import { Header } from "../Header/Header"
 import { Footer } from "../Footer/Footer"
-import { Boton }  from "../Boton/Boton";
-import { Link } from "react-router-dom"
-
+import "./DefaultPage.css"
+//ojo con el div class container por los margenes
 export const DefaultPage = (props) => {
     return <div>
-        <Header boton = <Link to="/nuevo-video"><Boton>Nuevo video</Boton></Link> ></Header>
-        { props.contenido }
+        <Header boton = {props.boton} ></Header>
+        { props.contenido}
+        {/* { props.carruselFrontEnd }
+        { props.carruselBackEnd }
+        { props.carruselInnovacionGestion } */}
+        { props.carruseles }
         <Footer></Footer>
     </div>
 }

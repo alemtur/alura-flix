@@ -1,24 +1,63 @@
-import "./ListaOpciones.css"
+import React, { useState, useEffect } from "react";
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import { collection, getDocs, addDoc, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore'
+import { firestore } from '../../firebaseconfig/firebase';
+
+
+//import "./ListaOpciones.css"
 
 const ListaOpciones = (props) => {
 
-    const categorias = [
-        "Front End",
-        "Back End",
-        "Innovación y Gestión"
-    ]
+    const [categoriaVideos, setCategoriaVideos] = useState([])
+
+    const categoriaVideosCollection = collection(firestore, "categoria_videos")
+
+    const getCategoriaVideos = async () => {
+        const data = await getDocs(categoriaVideosCollection)
+        setCategoriaVideos(
+        data.docs.map( (doc) => ( {...doc.data(), id:doc.id})) )
+        
+    }
+
+    useEffect( () => {
+        getCategoriaVideos()
+        //eslint-disable-next-line
+    }, [] )
     
     const manejarCambio = (e)  => {
-        /* console.log("cambio", e.target.value) */
-        props.setCategoria(e.target.value)
+        props.actualizarValor(e.target.value)
     }
-    return <div className="lista-opciones">
-        <label>Categorías</label>
-        <select value={ props.valor } onChange={ manejarCambio }>
-            <option value="" disabled defaultValue="" hidden>Escoja una categoría</option>
-            { categorias.map( (categoria, index) => <option key={ index } value={ categoria }>{ categoria }</option>)}
-        </select>
-    </div>
+    return ( 
+        
+        <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Elige una categoría</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={props.valor}
+                    //label="Categoría"
+                    onChange={manejarCambio}
+                    style={{backgroundColor: "rgb(36, 33, 33)",
+                            color:"white"
+                        }}
+                    
+                >
+                    { categoriaVideos.map( (categoriaVideo) => 
+                    <MenuItem 
+                        key={ categoriaVideo.id }
+                        value={ categoriaVideo.nombre }>{ categoriaVideo.nombre }
+                    </MenuItem>)}
+                </Select>
+            </FormControl>
+        </Box>
+
+
+    );
 }
 
 export default ListaOpciones

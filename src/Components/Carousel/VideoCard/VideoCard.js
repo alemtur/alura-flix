@@ -1,36 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import ReactPlayer from "react-player/youtube";
+
 
 const Card = styled.div`
-    box-shadow: 4px 4px 20px 0px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    margin: 2px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
-    font-size: 12px;
+    
+    //display: flex;
+    //align-items: center;
+    /* border-style: solid;
+    border-color: cyan; */
+    height: 200px;
+    width: 200px;
+    
 `
 
-const Info = styled.div`
-    display: flex;
-    flex-direction: column;
-    .type{
-        font-weight: bold;
-    }
-`;
-
-export const VideoCard = ({datosCard}) => {
-    const { urlVideo, urlImagen } = datosCard;
-
+export const VideoCard = (props) => {
+    
     return (
         <Card>
-            <img src={urlImagen} alt="Imagen video" />
-            <Info>
-                <span>{urlVideo}</span>                
-            </Info>
-            
-        </Card>
+            <ReactPlayer width={"200px"} height={"200px"} url={props.urlVideo} light={true} />
+        </Card>                
     );
 
 }

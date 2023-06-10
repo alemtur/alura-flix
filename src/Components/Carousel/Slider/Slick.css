@@ -42,8 +42,11 @@ h3 {
   border: 0;
 }
 .slick-slider {
-  margin: 30px auto 50px;
+  /*  margin: 30px auto 50px; */
+  margin: 20px 50px;
+  /* width: 80%; */
 }
+
 .slick-dots {
   margin-left: 0;
 }
@@ -96,4 +99,11 @@ h3 {
 .slick-next {
   z-index: 100;
   right: 20px !important;
+} */
+
+/* .slick-slide,
+.slick-active,
+.slick-current div {
+  width: 200px;
+  margin: 0;
 } */

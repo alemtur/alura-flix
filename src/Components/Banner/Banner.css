@@ -21,11 +21,14 @@
 }
 
 .banner-titulo div {
+  display: flex;
+  flex-direction: column;
   color: white;
   background-color: cyan;
-  width: 170px;
+  width: 200px;
   height: 80px;
-  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 .banner-titulo h2 {
@@ -36,4 +39,24 @@
   color: gray;
   font-size: 1.2rem;
   text-align: justify;
+}
+
+@media screen and (max-width: 320px) {
+  .banner-container {
+    /* justify-content: left; */
+    width: 320px;
+    justify-content: center;
+  }
+
+  /*  .banner-titulos {
+    width: 320px;
+  }
+ */
+  /* .banner-titulo {
+    width: 320px;
+  } */
+
+  .banner-imagen {
+    visibility: hidden;
+  }
 }
